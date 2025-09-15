@@ -106,7 +106,7 @@ def prepare_pipeline(pricing_dtf:pd.DataFrame) -> GridSearchCV:
         ('model', RandomForestRegressor(random_state=42))
     ])
 
-    # Grid search parameters
+    # Grid search parameters. Pour chaque param, le prefix du nom doit correspondre à la clé du step du type d emodèle sous-jacent
     params = {
         'model__max_depth': [3, 5, 7, 10],
         'model__min_samples_split': [8, 10, 20],
